@@ -1,0 +1,58 @@
+html{
+font-family: 'Alegreya', serif;
+font-family: 'Chakra Petch', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-family: 'Chakra Petch', sans-serif;
+}
+
+header,h1,nav,main,article,aside,footer{
+border:1px solid black;
+padding:0;
+margin:0;
+}
+
+header{
+display: flex;
+}
+
+header h1{
+
+}
+
+header nav{
+    margin-left: 100px;
+
+}
+header ul{
+        display: flex;
+
+}
+header li{
+    margin-left: 20px;
+
+}
+
+main{
+    display: flex;
+}
+
+article{
+    flex-basis: 75%;
+}
+aside{
+    flex-basis: 25%;
+}
+
+@media (max-width: 600px){
+    main{
+        flex-direction:column;
+    }
+    article{
+        flex-basis: 100%;
+    }
+    aside{
+            flex-basis: 100%;
+    }
+}
