@@ -10,8 +10,17 @@
 <link rel="stylesheet" href="game.css" />
     
 <script>
+
+let game_data;
+     
 function game (data)
 {
+    game_data = data;
+    
+    document.getElementById("Terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de terrror definitivo.</p>";
+    
+    document.getElementById("Terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[0].name+". ¿Que quieres hacer?</p>";
+    
     console.log(data.rooms[0].name);
 }
 fetch("https://gu1lle70.github.io/game.json").then(response => response.json()).then(data => game(data));      
