@@ -135,13 +135,13 @@ function readAction ()
     
         console.log(data);
     
-    if (data.lenght == 0 || instruction_trim == ""){
+    if (data.length == 0 || instruction_trim == ""){
         
     terminal_out("<p><strong>Error</strong>: Escribe una instrucción</p>");
     return;  
         
     }
-    if (data.lenght == 1){
+    if (data.length == 1){
         
           parseCommand(data[0]);
         
