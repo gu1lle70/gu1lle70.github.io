@@ -26,12 +26,29 @@ function game (data)
     
     
 }
+
+function terminal_out (info)
+    {
+        
+        document.getElementById("terminal").innerHTML += info;
+    }
     
 function parseCommand (command)
 {
     
      console.log("Commando", command);
-    
+    switch (command){
+        case "ver":
+        terminal_out ("<p>"+game_data.rooms[current_room].description+"</p>");
+            
+            
+            
+            break;
+            
+        default:
+        terminal_out("<p><strong>Error</strong>: "+command+" Comando no encontrado</p>")
+        
+    }
 }
 
 function parseInstruction (instruction)
