@@ -26,11 +26,21 @@ function game (data)
     
     
 }
-    setTimeout(function(){
+function readAction ()
+{
+    let command = document.getElementById("commands").value;  
+    
+    let data = command.split(" ");
+    
+    console.log(data);
+}
+    
+    
+    
 fetch("https://gu1lle70.github.io/game.json").then(response => response.json()).then(data => game(data));      
     
         
-}, 2000);
+
 </script>
 </head>
 
@@ -54,7 +64,7 @@ fetch("https://gu1lle70.github.io/game.json").then(response => response.json()).
 <form>
 <div id="Terminal"> </div> 
 <p><label>Introduce comando:</label> <input type="text" id="commands" /></p>   
-<p><input type="submit" value="Acción" /></p>     
+<input type="submit" value="Acción" onclick="readAction(); return false;"/>    
 </form>   
     
     
