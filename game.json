@@ -6,6 +6,13 @@
     "description":"El Parking que no puedes user",
     "items":["piedra","bicicleta"],
     "doors":["principal","salida"]        
+    },
+    {
+    "id":"Hall", 
+    "name":"Pasillo entrada en ENTI", 
+    "description":"Arbolillo gigapocho",
+    "items":["piedra","bicicleta"],
+    "doors":["principal","salida"]        
     }
            
 ],
