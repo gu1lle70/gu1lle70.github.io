@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>  GuillemPage </title> 
+<title>  GuillemSalas PaginaGITHUB (M04UF1) </title> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic" rel="stylesheet">
@@ -30,7 +30,8 @@ function game (data)
 function terminal_out (info)
     {
         
-        document.getElementById("terminal").innerHTML += info;
+        let terminal = document.getElementById("terminal").innerHTML += info;
+        terminal.innerHTML += info;
     }
     
 function parseCommand (command)
@@ -47,6 +48,13 @@ function parseCommand (command)
             
         default:
         terminal_out("<p><strong>Error</strong>: "+command+" Comando no encontrado</p>")
+        case "ir":
+            
+            
+            
+            
+        break;
+        
         
     }
 }
@@ -64,13 +72,13 @@ function readAction ()
     let instruction = document.getElementById("commands").value;  
     let instruction_trim = instruction.trim();
     
-    let data = instruction.trim.split(" ");
+    let data = instruction_trim.split(" ");
     
         console.log(data);
     
     if (data.lenght == 0 || instruction_trim == ""){
         
-    document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instrucción</p>";
+    terminal_out("<p><strong>Error</strong>: Escribe una instrucción</p>");
     return;  
         
     }
