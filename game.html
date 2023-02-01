@@ -26,13 +26,47 @@ function game (data)
     
     
 }
+    
+function parseCommand (command)
+{
+    
+    
+    
+}
+
+function parseInstruction (instruction)
+{
+    
+    
+
+}
+    
 function readAction ()
 {
+    
     let command = document.getElementById("commands").value;  
     
     let data = command.split(" ");
     
-    console.log(data);
+        console.log(data);
+    
+    if (data.lenght == 0){
+        
+    document.getElementById("Terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instrucción</p>";
+    return;  
+        
+    }
+    if (data.lenght == 1){
+        
+          parseCommand(data[0]);
+        
+    }
+    else{
+        
+         parseInstruction(data)
+        
+    }
+    
 }
     
     
