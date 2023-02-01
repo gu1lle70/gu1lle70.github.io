@@ -26,8 +26,11 @@ function game (data)
     
     
 }
+    setTimeout(function(){
 fetch("https://gu1lle70.github.io/game.json").then(response => response.json()).then(data => game(data));      
     
+        
+}, 2000);
 </script>
 </head>
 
