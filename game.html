@@ -53,7 +53,7 @@ function readAction ()
     
     if (data.lenght == 0 || instruction_trim == ""){
         
-    document.getElementById("Terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instrucción</p>";
+    document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: Escribe una instrucción</p>";
     return;  
         
     }
@@ -97,7 +97,7 @@ fetch("https://gu1lle70.github.io/game.json").then(response => response.json()).
 <main>
 
 <form>
-<div id="Terminal"> </div> 
+<div id="terminal"> </div> 
 <p><label>Introduce comando:</label> <input type="text" id="commands" /></p>   
 <input type="submit" value="Acción" onclick="readAction(); return false;"/>    
 </form>   
