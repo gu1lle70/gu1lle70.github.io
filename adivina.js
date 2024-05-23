@@ -1,5 +1,5 @@
 
-let numeroAdivinar = Math.floor(Math.random() * 10 + 1);
+let numeroAdivinar = Math.floor(Math.random() * 100 + 1);
 let inputUsuario = 0;
 let intentos = 0;
 let salida = document.getElementById("salida");
@@ -26,7 +26,7 @@ function PlayGame(){
 }
 function ResetGame(){
 
-    numeroAdivinar = Math.floor(Math.random() * 10 + 1);
+    numeroAdivinar = Math.floor(Math.random() * 100 + 1);
     prueba.innerHTML =  "El numero es = ?";
     salida.innerHTML = "Empieza a Jugar!";
     salida.style.color = 'black';
