@@ -4,37 +4,45 @@
 <title>  GuillemPage </title> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap">
+<link rel="icon" href="img/favhobbies.svg" type="image/svg">
     
 <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="game.css" />
+<link rel="stylesheet" href="slider.css" />
 </head>
 
 <body>
-<header>
-<h1> GuillemSalas PaginaGITHUB (M04UF1)  </h1>
-<nav>
-<ul id="main-menu">
-<li id="menu-prenetacion"><a href="index.html"> Presentació </a></li>
-<li id="menu-hobbies"><a href="hobbies.html"> Hobbies </a></li>
-<li id="manu-contacte"><a href="contacte.html"> Contacte</a></li>
-<li id="menu-CV"><a href="cv.html"> CV </a></li>
-<li id="menu-game"><a href="game.html"> Game </a></li>
-</ul>
-</nav>
-</header>
+    <header>
+        <h1><a href="index.html"> Guillem Salas </a></h1>
+        <nav>
+        <li id="menu-prenetacion"><a href="index.html"> Portada </a></li>
+        <li id="menu-CV"><a href="cv.html"> CV </a></li>
+        <li id="menu-hobbies"><a href="hobbies.html"> Aficiones </a></li>
+        <li id="manu-contacte"><a href="contacte.html"> Contacto</a></li>
+        <li id="menu-game"><a href="game.html"> Juego </a></li>
+        </nav>
+    </header>
 <main>
 
 <article>
-<h1>Hobbies</h1>
-<h2>MIS Hobbies</h2>
-<p>Mis hobbies principales son programar i hacer juegos, tambien juagar a videojuegos salir con amigos i tambien me gusta mucho ir a conciertos</p>
+
+<h2>Aficiones</h2>
+<p>Mis hobbies principales son programar, jugar a videojuegos ir a conciertos y tambien me gusta ver series</p>
 </article>
 
 
-<aside>
-<p><img id="peppo" src="peppo2.gif" /></p>
-</aside>
+<article>
+    <div class="slider-frame">
+        <h2>Slider Imagenes Aficiones</h2>
+        <ul>
+            <li><img src="img/codeSlider.png" alt="Code"></li>
+            <li><img src="img/gameSlider.png" alt="Game"></li>
+            <li><img src="img/conciertoSlider.png" alt="Concert"></li>  
+            <li><img src="img/seriesSlider.png" alt="Series"></li>
+        </ul>
+    </div>
+    
+</article>
 
 
 
@@ -44,8 +52,7 @@
 
 
 <footer>
-<p> GuillemSalas (c) <span id="footer-year">2022</span></p>
-<p><a href="https://twitter.com/guillem_70">Twitter</a> </p>.
+    <p> GuillemSalas (c) <span id="footer-year">2024</span></p>
 <script>
 document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 </script>

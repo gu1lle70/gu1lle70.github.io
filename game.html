@@ -1,62 +1,48 @@
 <!doctype html>
 <html>
 <head>
-<title>  GuillemSalas PaginaGITHUB (M04UF1) </title> 
+<title>  GuillemSalas </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap">
+<link rel="icon" href="img/favindex.svg" type="image/svg">
     
+
 <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="game.css" />
-    
-<script type="text/javascript" src="game.js"></script>
 
 </head>
 
 <body>
-<header>
-<h1> GuillemSalas PaginaGITHUB (M04UF1)  </h1>
-<nav>
-<ul id="main-menu">
-<ul id="main-menu">
-<li id="menu-prenetacion"><a href="index.html"> Presentació </a></li>
-<li id="menu-hobbies"><a href="hobbies.html"> Hobbies </a></li>
-<li id="manu-contacte"><a href="contacte.html"> Contacte</a></li>
-<li id="menu-CV"><a href="cv.html"> CV </a></li>
-<li id="menu-game"><a href="game.html"> Game </a></li>
-</ul>
-</nav>
-</header>
-    
+    <header>
+        <h1><a href="index.html"> Guillem Salas </a></h1>
+        <nav>
+        <li id="menu-prenetacion"><a href="index.html"> Portada </a></li>
+        <li id="menu-CV"><a href="cv.html"> CV </a></li>
+        <li id="menu-hobbies"><a href="hobbies.html"> Aficiones </a></li>
+        <li id="manu-contacte"><a href="contacte.html"> Contacto</a></li>
+        <li id="menu-game"><a href="game.html"> Juego </a></li>
+        </nav>
+    </header>
 <main>
 
-<form>
-<div id="terminal"> </div> 
-<p><label>Introduce comando:</label> <input type="text" id="commands" /></p>   
-<input type="submit" value="Acción" onclick="readAction(); return false;"/>    
-</form>   
-    
-    
 <article>
+<h2>Juego Adivina el numero</h2>
+<p>Esto es el juego en js para adivinar el numero del 1 - 10</p>
+
+<input type="text" name="respuesta" id="respuesta" autofocus>
+<button onclick="PlayGame()">Comprobar</button>
+<button onclick="ResetGame()">Reset</button>
+<button onclick="MostrarRespuesta()">Mostrar Num</button>
+<p id="salida">Empieza a Jugar!</p>
+<p id="prueba">El numero es = ?</p>
 </article>
-
-
-<aside>
-<p><img id="peppo" src="enti.png" /></p>
-</aside>
-
-
-
-
-
 </main>
 
-
-
-
 <footer>
-<p> GuillemSalas (c) <span id="footer-year">2022</span></p>
-<p><a href="https://twitter.com/guillem_70">Twitter</a> </p>.
+<p> GuillemSalas (c) <span id="footer-year">2024</span></p>
+
+<script type = "text/javascript" src="adivina.js"></script>
 <script>
 document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 </script>

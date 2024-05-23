@@ -4,78 +4,84 @@
 <title>  GuillemPage </title> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic" rel="stylesheet">
-    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap">
+<link rel="icon" href="img/favform.svg" type="image/svg">
 <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="game.css" />
+
 </head>
 
 <body>
-<header>
-<h1> GuillemSalas PaginaGITHUB (M04UF1)  </h1>
-<nav>
-<ul id="main-menu">
-<li id="menu-prenetacion"><a href="index.html"> Presentació </a></li>
-<li id="menu-hobbies"><a href="hobbies.html"> Hobbies </a></li>
-<li id="manu-contacte"><a href="contacte.html"> Contacte</a></li>
-<li id="menu-CV"><a href="cv.html"> CV </a></li>
-<li id="menu-game"><a href="game.html"> Game </a></li>
-</ul>
-</nav>
-</header>
+    <header>
+        <h1><a href="index.html"> Guillem Salas </a></h1>
+        <nav>
+        <li id="menu-prenetacion"><a href="index.html"> Portada </a></li>
+        <li id="menu-CV"><a href="cv.html"> CV </a></li>
+        <li id="menu-hobbies"><a href="hobbies.html"> Aficiones </a></li>
+        <li id="manu-contacte"><a href="contacte.html"> Contacto</a></li>
+        <li id="menu-game"><a href="game.html"> Juego </a></li>
+        </nav>
+    </header>
 <main>
 
 <article>
 <h2> Formulario de contacto </h2>
-	<form>
-	<p><label for="contact-name">Nombre:</label> <input type="text" name="name" id="contact-name" /></p>
-	<p><label for="contact-email">E-mail:</label> <input type="email" name="email" id="contact-email" /></p>
-	<p><label for="contact-pais">País:</label> <select name "country" id="contact-pais">
-	<option vlaue="esp">Españita</option>
-	<option vlaue="prt">Portugal</option>
-	<option vlaue="arg">Argentina</option>
-	<option vlaue="usa">Estados Unidos</option>
-	<option vlaue="mex">Mexico</option>
-	</select> </p>
+	<form method="GET">
+	<p id="p-name"></p><label for="contact-name">Nombre: </label><input type="text" placeholder="Introduce tu Nombre" name="name" id="contact-name" autofocus required/> <p id="name_error" ></p></p>
 	
-	<p><label for="contact-edad">Edad:</label> <input type="number" name="age" id="contact-edad" /></p>
+	<p id="p-email"><label for="contact-email">E-mail: </label><input type="email" placeholder="Introduce tu E-mail" name="email" id="contact-email" required/> <p id="email_error"></p> </p>
+
+    <p id="p-message"><label for="contact-message">Mensaje:</label><textarea name="comment" id="contact-message"></textarea><p id="text_error"></p> </p>
 	
-	<p><label for="contact-valoracion5">Valoración:</label></p>
-	<ul>
-	<li><input type="radio" name="rating" value="1" id="contact-valoracion1"/> <label for="contact-valoracion1"> 1 (uno)</label> </li>
-	<li><input type="radio" name="rating" value="2" id="contact-valoracion2"/> <label for="contact-valoracion2"> 2 (dos)</label> </li>
-	<li><input type="radio" name="rating" value="3" id="contact-valoracion3"/> <label for="contact-valoracion3"> 3 (tres)</label> </li>
-	<li><input type="radio" name="rating" value="4" id="contact-valoracion4"/> <label for="contact-valoracion4"> 4 (quatro)</label> </li>
-	<li><input type="radio" name="rating" value="5" id="contact-valoracion5"/> <label for="contact-valoracion5"> 5 (cinco) </label> </li>
-	</ul>
-	
-	<p><label for="contact-comentario">Comentario:</label>
-	<textarea name="comment" id="contact-comentario"> </textarea></p>
-	
-	<p><input type="submit" name="send" value="Enviar" /></p>
-	
-		
+	<input type="submit" id="contact-submit" name="submit" value="Enviar">
+
 	</form>
 </article>
-
-
-<aside>
-<p><img id="peppo" src="peppo3.gif" /></p>
-</aside>
-
-
-
 </main>
-
-
-
-
 <footer>
-<p> GuillemSalas (c) <span id="footer-year">2022</span></p>
-<p><a href="https://twitter.com/guillem_70">Twitter</a> </p>.
+    <p> GuillemSalas (c) <span id="footer-year">2024</span></p>
+
+
 <script>
 document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-</script>
-</footer>
+
+function check_form() {  
+    
+    let name = document.getElementById('contact-name');
+    let email = document.getElementById('contact-email');
+    let textarea = document.getElementById('contact-message');
+    let contact = document.getElementById('contact');
+
+    let name_error = document.getElementById('name_error');
+    let email_error = document.getElementById('email_error');
+    let text_error = document.getElementById('text_error');
+
+    if (name.value.trim() === '') {
+        name_error.innerHTML = "No ha introducido nombre";
+        name.style.border = '1px solid red';
+    } else {
+        name_error.innerHTML = "";
+        name.style.border = '1px solid green';
+    }
+    if (email.value.trim() === '') {
+        email_error.innerHTML = "No ha introducido email";
+        email.style.border = '1px solid red';
+    } else {
+        email_error.innerHTML = "";
+        email.style.border = '1px solid green';
+    }
+    if (textarea.value.trim() === '') {
+        text_error.innerHTML = "No a puesto mensaje(no es obligatorio)";
+        textarea.style.border = '1px solid red';
+    } else {
+        text_error.innerHTML = "";
+        textarea.style.border = '1px solid green';
+    }
+}
+let button = document.getElementById('contact-submit');
+button.addEventListener('click', check_form);
+
+    </script>
+    </footer>
 </body>
 </html>
