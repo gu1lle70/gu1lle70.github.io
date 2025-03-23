@@ -73,7 +73,7 @@ function precarga ()
 	this.load.audio('game_over_music', 'resources/audio/GameOver.mp3');
 	this.load.audio('game_over_music', 'resources/audio/GameOver.mp3');
 
-	this.load.audio('mouseclick_fx', 'audio/mouseclick.mp3');
+	this.load.audio('mouseclick_fx', 'resources/audio/mouseclick.mp3');
 }
 
 function crea ()
