@@ -227,12 +227,12 @@ function crea ()
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
 	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50,
-		countdown, {"fontSize":	48, "fontStyle": "bold"} )
+		score, {"fontSize":	48, "fontStyle": "bold"} )
 		.setOrigin(0.5)
     	.setVisible(false);
 
 	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 + 35,
-		countdown, {"fontSize":	48, "fontStyle": "bold"} )
+		{"fontSize":	48, "fontStyle": "bold"} )
 		.setOrigin(0.5)
     	.setVisible(false);
 	
