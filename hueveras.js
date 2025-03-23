@@ -232,7 +232,7 @@ function crea ()
 		.setVisible(false);
 		
 	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 80, 
-		"Score: " + score, { "fontSize": 48, "fontStyle": "bold", align: "center" })
+		score, { "fontSize": 48, "fontStyle": "bold", align: "center" })
 		.setOrigin(0.5)
 		.setVisible(false);
 
