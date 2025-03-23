@@ -226,7 +226,7 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	sscore_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50, "Score: " + score, {
+	score_text = this.add.text(canvas_w / 2, canvas_h / 2 - 20, "Score: " + score, {
 		fontSize: '48px',
 		fontStyle: 'bold',
 		fill: '#ffffff'
