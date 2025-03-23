@@ -226,13 +226,13 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50,
+	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 25,
 		score, {"fontSize":	48, "fontStyle": "bold"} )
 		.setOrigin(0.5)
     	.setVisible(false);
 
-	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 + 35,
-		{"fontSize":	48, "fontStyle": "bold"} )
+	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50,
+		{"fontSize": 100, "fontStyle": "bold"} )
 		.setOrigin(0.5)
     	.setVisible(false);
 	
