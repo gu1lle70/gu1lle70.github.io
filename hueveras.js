@@ -226,15 +226,17 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 25,
-		score, {"fontSize":	48, "fontStyle": "bold"} )
-		.setOrigin(0.5)
-    	.setVisible(false);
+	sscore_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50, "Score: " + score, {
+		fontSize: '48px',
+		fontStyle: 'bold',
+		fill: '#ffffff'
+	}).setOrigin(0.5).setVisible(false);
 
-	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50,
-		{"fontSize": 100, "fontStyle": "bold"} )
-		.setOrigin(0.5)
-    	.setVisible(false);
+		gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 - 50, "GAME OVER!", {
+			fontSize: '100px',
+			fontStyle: 'bold',
+			fill: '#ff0000'
+		}).setOrigin(0.5).setVisible(false);
 	
 	
 	music.background = this.sound.add('background_music', {
@@ -282,8 +284,9 @@ countdown_interval = setInterval(function(){
 		console.log("Game Over");
 		music.background.stop();
 		music.game_over.play();
-		score_text.setText("Score: " + score).setVisible(true);
-		gameOver_text.setText("!GAME OVER!").setVisible(true);
+		gameOver_text.setVisible(true);
+        score_text.setText("Score: " + score).setVisible(true);
+		
 		for (let i = 0; i < huevos.length; i++) {
 			huevos[i].falling = false;
 			huevos[i].disableInteractive();
