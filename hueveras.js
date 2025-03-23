@@ -283,7 +283,7 @@ countdown_interval = setInterval(function(){
 		music.background.stop();
 		music.game_over.play();
 		score_text.setText("Score: " + score).setVisible(true);
-		gameOver_text.setVisible(true);
+		gameOver_text.setText("!GAME OVER!").setVisible(true);
 		for (let i = 0; i < huevos.length; i++) {
 			huevos[i].falling = false;
 			huevos[i].disableInteractive();
