@@ -36,6 +36,10 @@ let countdown = 20;
 let countdown_text;
 let countdown_interval;
 
+let score = 0;
+let score_text;
+let gameOverText;
+
 let huevos = [];
 
 let huevos_speed = 1;
@@ -45,10 +49,6 @@ let huevos_interval;
 let huevos_interval_time = 3000;
 
 let huevo_current = 0;
-
-
-
-
 
 let music = {
 	background: null,
@@ -61,7 +61,6 @@ let fx = {
 	good: null
 };
 
-
 function precarga ()
 {
 	this.load.image('grass_bg', 'resources/imgs/grass_bg.png');
@@ -71,8 +70,6 @@ function precarga ()
 
 	this.load.audio('background_music', 'resources/audio/apple_cider.mp3');
 	this.load.audio('game_over_music', 'resources/audio/GameOver.mp3');
-	this.load.audio('game_over_music', 'resources/audio/GameOver.mp3');
-
 	this.load.audio('mouseclick_fx', 'resources/audio/mouseclick.mp3');
 }
 
