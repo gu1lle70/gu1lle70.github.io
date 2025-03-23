@@ -64,14 +64,14 @@ let fx = {
 
 function precarga ()
 {
-	this.load.image('grass_bg', 'imgs/grass_bg.png');
-	this.load.image('straw_bg', 'imgs/straw_bg.png');
-	this.load.image('huevera', 'imgs/huevera.png');
-	this.load.image('huevo', 'imgs/huevo.png');
+	this.load.image('grass_bg', 'resources/imgs/grass_bg.png');
+	this.load.image('straw_bg', 'resources/imgs/straw_bg.png');
+	this.load.image('huevera', 'resources/imgs/huevera.png');
+	this.load.image('huevo', 'resources/imgs/huevo.png');
 
-	this.load.audio('background_music', 'audio/apple_cider.mp3');
-	this.load.audio('game_over_music', 'audio/GameOver.mp3');
-	this.load.audio('game_over_music', 'audio/GameOver.mp3');
+	this.load.audio('background_music', 'resources/audio/apple_cider.mp3');
+	this.load.audio('game_over_music', 'resources/audio/GameOver.mp3');
+	this.load.audio('game_over_music', 'resources/audio/GameOver.mp3');
 
 	this.load.audio('mouseclick_fx', 'audio/mouseclick.mp3');
 }
