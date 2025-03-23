@@ -226,15 +226,13 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	score_text = this.add.text(canvas_w / 2, canvas_h / 2 - 25,
-		score, {"fontSize":	48, "fontStyle": "bold"} )
-		.setOrigin(0.5)
-    	.setVisible(false);
+	score_text = this.add.text(field_center - 50, 16,
+		countdown, {"fontSize":	48, "fontStyle": "bold"} );
+		score_text.text.visible = false;
 
-	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 - 50,
-		{"fontSize": 48, "fontStyle": "bold"} )
-		.setOrigin(0.5)
-    	.setVisible(false);
+	gameOver_text = this.add.text(field_center - 20, 16,
+		countdown, {"fontSize":	48, "fontStyle": "bold"} );
+		gameOver_text.text.visible = false;
 	
 	
 	music.background = this.sound.add('background_music', {
@@ -282,12 +280,10 @@ countdown_interval = setInterval(function(){
 		console.log("Game Over");
 		music.background.stop();
 		music.game_over.play();
-		score_text.setText("Score: " + score).setVisible(true);
-		gameOver_text.setText("!GAME OVER!").setVisible(true);
-		for (let i = 0; i < huevos.length; i++) {
-			huevos[i].falling = false;
-			huevos[i].disableInteractive();
-		}
+		score_text.text = score;
+		gameOver_text.text = "GAME OVER!";
+		gameOver_text.text.visible = true;
+		score_text.text.visible = true;
 		clearInterval(countdown_interval);
 	}
 }, 1000);
@@ -310,6 +306,3 @@ function next_huevo ()
 
 	huevos_interval = setTimeout(next_huevo, huevos_interval_time);
 }
-
-
-huevos_interval = setTimeout(next_huevo, huevos_interval_time);
