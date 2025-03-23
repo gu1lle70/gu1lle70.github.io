@@ -228,11 +228,11 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	score_text = this.add.text(center, 16,
+	score_text = this.add.text(center, 5,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 		score_text.text.visible = false;
 
-	gameOver_text = this.add.text(center_gameOver, 16,
+	gameOver_text = this.add.text(center_gameOver, 12,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 		gameOver_text.text.visible = false;
 	
@@ -283,6 +283,7 @@ countdown_interval = setInterval(function(){
 		music.background.stop();
 		music.game_over.play();
 		score_text.text = score;
+		gameOver_text.text = "GAME OVER!";
 		gameOver_text.text.visible = true;
 		score_text.text.visible = true;
 		clearInterval(countdown_interval);
