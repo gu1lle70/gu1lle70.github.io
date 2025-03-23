@@ -17,8 +17,6 @@ let game = new Phaser.Game(config);
 //let rect_dir = 1;
 
 let field_center = canvas_w/2 + canvas_w/8;
-let center = canvas_w/2 + canvas_w/2;
-let center_gameOver = canvas_w/2 + canvas_w/4;
 
 let canvas_bg, eggcups_bg;
 
@@ -228,11 +226,11 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	score_text = this.add.text(center, 5,
+	score_text = this.add.text(field_center, 5,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 		score_text.text.visible = false;
 
-	gameOver_text = this.add.text(center_gameOver, 12,
+	gameOver_text = this.add.text(field_center, 12,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 		gameOver_text.text.visible = false;
 	
