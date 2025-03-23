@@ -190,7 +190,7 @@ function crea ()
 				console.log("Huevo dentro de huevera equivocada!!!");
 			}
 			countdown_text.text = countdown;
-			score_text.text = score;
+			score_text.setText("Score: " + score);
 		}
 		else if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_m.getBounds(), object.getBounds())){
 			if (object.huevo_type == "m"){
@@ -204,7 +204,7 @@ function crea ()
 				console.log("Huevo dentro de huevera equivocada!!!");
 			}
 			countdown_text.text = countdown;
-			score_text.text = score;
+			score_text.setText("Score: " + score);
 		}
 		else if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_d.getBounds(), object.getBounds())){
 			if (object.huevo_type == "d"){
@@ -218,7 +218,7 @@ function crea ()
 				console.log("Huevo dentro de huevera equivocada!!!");
 			}
 			countdown_text.text = countdown;
-			score_text.text = score;
+			score_text.setText("Score: " + score);
 		}
 	});
 
@@ -226,12 +226,12 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2 + 20, 
-		"GAME OVER!", { "fontSize": 64, "fontStyle": "bold", align: "center" })
+	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2, 
+		"GAME OVER!", { "fontSize": 64, "fontStyle": "bold", "color": "#ff0000", align: "center" })
 		.setOrigin(0.5)
 		.setVisible(false);
 		
-	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 50, 
+	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 80, 
 		"Score: " + score, { "fontSize": 48, "fontStyle": "bold", align: "center" })
 		.setOrigin(0.5)
 		.setVisible(false);
@@ -283,7 +283,7 @@ countdown_interval = setInterval(function(){
 		console.log("Game Over");
 		music.background.stop();
 		music.game_over.play();
-		score_text.text = score;
+		score_text.setText("Score: " + score);
 		gameOver_text.text = "GAME OVER!";
 		gameOver_text.setVisible(true);
 		score_text.setVisible(true);
