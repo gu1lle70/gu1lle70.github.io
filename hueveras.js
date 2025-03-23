@@ -274,7 +274,7 @@ countdown_interval = setInterval(function(){
 		music.background.stop();
 		music.game_over.play();
 		score_text.text = score;
-		game.paused = true;
+		score_text.visible = true;
 		clearInterval(countdown_interval);
 	}
 }, 1000);
