@@ -38,7 +38,7 @@ let countdown_interval;
 
 let score = 0;
 let score_text;
-let gameOverText;
+let gameOver_text;
 
 let huevos = [];
 
@@ -190,6 +190,7 @@ function crea ()
 				console.log("Huevo dentro de huevera equivocada!!!");
 			}
 			countdown_text.text = countdown;
+			score_text.text = score;
 		}
 		else if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_m.getBounds(), object.getBounds())){
 			if (object.huevo_type == "m"){
@@ -203,6 +204,7 @@ function crea ()
 				console.log("Huevo dentro de huevera equivocada!!!");
 			}
 			countdown_text.text = countdown;
+			score_text.text = score;
 		}
 		else if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_d.getBounds(), object.getBounds())){
 			if (object.huevo_type == "d"){
@@ -216,6 +218,7 @@ function crea ()
 				console.log("Huevo dentro de huevera equivocada!!!");
 			}
 			countdown_text.text = countdown;
+			score_text.text = score;
 		}
 	});
 
@@ -223,9 +226,9 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-		score_text = this.add.text(field_center, 16,
+	score_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
-		score_text.visible = false;
+		score_text.text.visible = false;
 	
 	
 	music.background = this.sound.add('background_music', {
@@ -274,7 +277,7 @@ countdown_interval = setInterval(function(){
 		music.background.stop();
 		music.game_over.play();
 		score_text.text = score;
-		score_text.visible = true;
+		score_text.text.visible = true;
 		clearInterval(countdown_interval);
 	}
 }, 1000);
