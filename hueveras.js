@@ -17,6 +17,8 @@ let game = new Phaser.Game(config);
 //let rect_dir = 1;
 
 let field_center = canvas_w/2 + canvas_w/8;
+let center = canvas_w/2 + canvas_w/2;
+let center_gameOver = canvas_w/2 + canvas_w/4;
 
 let canvas_bg, eggcups_bg;
 
@@ -38,7 +40,7 @@ let countdown_interval;
 
 let score = 0;
 let score_text;
-let gameOver_text;
+let gameOver_text = "GameOver!";
 
 let huevos = [];
 
@@ -226,9 +228,13 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	score_text = this.add.text(field_center, 16,
+	score_text = this.add.text(center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 		score_text.text.visible = false;
+
+	gameOver_text = this.add.text(center_gameOver, 16,
+		countdown, {"fontSize":	48, "fontStyle": "bold"} );
+		gameOver_text.text.visible = false;
 	
 	
 	music.background = this.sound.add('background_music', {
@@ -277,6 +283,7 @@ countdown_interval = setInterval(function(){
 		music.background.stop();
 		music.game_over.play();
 		score_text.text = score;
+		gameOver_text.text.visible = true;
 		score_text.text.visible = true;
 		clearInterval(countdown_interval);
 	}
