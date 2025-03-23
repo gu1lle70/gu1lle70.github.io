@@ -226,12 +226,12 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
-	gameOver_text = this.add.text(canvas_w / 2, canvas_h / 2, 
+	gameOver_text = this.add.text(field_center, 
 		"GAME OVER!", { "fontSize": 64, "fontStyle": "bold", "color": "#ff0000", align: "center" })
 		.setOrigin(0.5)
 		.setVisible(false);
 		
-	score_text = this.add.text(canvas_w / 2, canvas_h / 2 + 80, 
+	score_text = this.add.text(field_center + 80, 
 		score, { "fontSize": 48, "fontStyle": "bold", align: "center" })
 		.setOrigin(0.5)
 		.setVisible(false);
@@ -255,7 +255,7 @@ function crea ()
 
 function actualiza ()
 {
-	if (countdown == 10){
+	if (countdown <= 10){
 		music.background.rate = 1.25;
 	}
 
@@ -275,6 +275,7 @@ function actualiza ()
 
 
 countdown_interval = setInterval(function(){
+
 	countdown--;
 
 	countdown_text.text = countdown;
@@ -315,3 +316,4 @@ function next_huevo ()
 
 	huevos_interval = setTimeout(next_huevo, huevos_interval_time);
 }
+huevos_interval = setTimeout(next_huevo, huevos_interval_time);
