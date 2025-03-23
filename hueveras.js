@@ -181,7 +181,7 @@ function crea ()
 		if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_b.getBounds(), object.getBounds())){
 			if (object.huevo_type == "b"){
 				countdown += 5;
-				
+				score += 2;
 				console.log("Huevo dentro de huevera!!!");
 			}
 			else{
@@ -194,7 +194,7 @@ function crea ()
 		else if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_m.getBounds(), object.getBounds())){
 			if (object.huevo_type == "m"){
 				countdown += 5;
-				
+				score += 5;
 				console.log("Huevo dentro de huevera!!!");
 			}
 			else{
@@ -207,7 +207,7 @@ function crea ()
 		else if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_d.getBounds(), object.getBounds())){
 			if (object.huevo_type == "d"){
 				countdown += 5;
-				
+				score += 10;
 				console.log("Huevo dentro de huevera!!!");
 			}
 			else{
@@ -223,6 +223,10 @@ function crea ()
 	countdown_text = this.add.text(field_center, 16,
 		countdown, {"fontSize":	48, "fontStyle": "bold"} );
 
+		score_text = this.add.text(field_center, 16,
+		countdown, {"fontSize":	48, "fontStyle": "bold"} );
+		score_text.visible = false;
+	
 	
 	music.background = this.sound.add('background_music', {
 			loop: true,
@@ -269,7 +273,8 @@ countdown_interval = setInterval(function(){
 		console.log("Game Over");
 		music.background.stop();
 		music.game_over.play();
-
+		score_text.text = score;
+		game.paused = true;
 		clearInterval(countdown_interval);
 	}
 }, 1000);
