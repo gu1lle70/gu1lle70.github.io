@@ -255,7 +255,7 @@ function crea ()
 
 function actualiza ()
 {
-	if (countdown <= 10){
+	if (countdown == 10){
 		music.background.rate = 1.25;
 	}
 
@@ -264,7 +264,7 @@ function actualiza ()
 		if (huevos[i].falling){
 			huevos[i].y += huevos_speed;
 
-			if (huevos[i].y > canvas_h +64){
+			if (huevos[i].y > canvas_h + 64){
 				huevos[i].falling = false;
 
 			}
@@ -287,10 +287,12 @@ countdown_interval = setInterval(function(){
 		gameOver_text.text = "GAME OVER!";
 		gameOver_text.setVisible(true);
 		score_text.setVisible(true);
+
 		for (let i = 0; i < huevos.length; i++) {
 			huevos[i].falling = false;
 			huevos[i].disableInteractive();
 		}
+
 		clearInterval(countdown_interval);
 	}
 }, 1000);
