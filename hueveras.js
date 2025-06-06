@@ -27,6 +27,7 @@ let huevera_x = 128;
 
 let huevo_b, huevo_m, huevo_d;
 
+let isGameOver;
 
 let huevo_shadow;
 
@@ -177,6 +178,7 @@ function crea ()
 		object.setScale(1);
 		huevo_shadow.x = -10000;
 		huevo_shadow.y = -10000;
+		if (isGameOver) return;
 
 		if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_b.getBounds(), object.getBounds())){
 			if (object.huevo_type == "b"){
@@ -283,8 +285,13 @@ countdown_interval = setInterval(function(){
 
 	if (countdown <= 0){
 		console.log("Game Over");
+		isGameOver = true;
 		music.background.stop();
+
+		if (!music.game_over.isPlaying) 
+		{
 		music.game_over.play();
+		}
 		score_text.setText("Score: " + score);
 		gameOver_text.text = "GAME OVER!";
 		gameOver_text.setVisible(true);
