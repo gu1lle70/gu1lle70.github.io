@@ -144,6 +144,9 @@ function crea ()
 		huevo_tmp.setInteractive({ draggable:true });
 
 		huevo_tmp.on('pointerdown', function (){
+
+			if (isGameOver) return;
+			
 			this.falling = false;
 
 			let huevo_color = "blanco";
