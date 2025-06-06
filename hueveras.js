@@ -220,6 +220,7 @@ function crea ()
 			countdown_text.text = countdown;
 			score_text.setText("Score: " + score);
 		}
+		object.destroy();
 	});
 
 	
