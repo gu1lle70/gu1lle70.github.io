@@ -279,11 +279,11 @@ function actualiza ()
 
 countdown_interval = setInterval(function(){
 
+	if (isGameOver) return;
 	countdown--;
 
-	countdown_text.text = countdown;
-
 	if (countdown <= 0){
+		countdown = 0;
 		console.log("Game Over");
 		isGameOver = true;
 		music.background.stop();
@@ -304,6 +304,7 @@ countdown_interval = setInterval(function(){
 
 		clearInterval(countdown_interval);
 	}
+		countdown_text.text = countdown;	
 }, 1000);
 
 
