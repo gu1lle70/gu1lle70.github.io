@@ -167,6 +167,9 @@ function crea ()
 	}
 
 	this.input.on('drag', function (pointer, object, x, y) {
+
+		if (isGameOver) return;
+
 		object.x = x;
 		object.y = y;
 		huevo_shadow.x = x + 8;
@@ -175,10 +178,12 @@ function crea ()
 	});
 
 	this.input.on('dragend', function (pointer, object, x, y) {
+
+		if (isGameOver) return;
+
 		object.setScale(1);
 		huevo_shadow.x = -10000;
 		huevo_shadow.y = -10000;
-		if (isGameOver) return;
 
 		if (Phaser.Geom.Intersects.RectangleToRectangle(huevera_b.getBounds(), object.getBounds())){
 			if (object.huevo_type == "b"){
@@ -264,6 +269,7 @@ function actualiza ()
 
 
 	for (let i = 0; i < huevos.length; i++){
+		if (isGameOver) return;
 		if (huevos[i].falling){
 			huevos[i].y += huevos_speed;
 
@@ -279,8 +285,8 @@ function actualiza ()
 
 countdown_interval = setInterval(function(){
 
-	if (isGameOver) return;
 	countdown--;
+	if (isGameOver) return;
 
 	if (countdown <= 0){
 		countdown = 0;
